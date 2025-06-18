@@ -1,35 +1,28 @@
-
-import java.util.HashSet;
-import java.util.Set;
-
 public class Main {
     public static void main(String[] args) {
-        int solution = longestSubString("abcabcbb");
-        System.out.println(solution);
+        int solution = getMaxSubString("abcabcbb");
+        System.out.println(solution); // Output: 3
     }
 
-    public static int longestSubString(String s) {
-        int maxSub = 0;
-        Set<Character> sNoneDuplicants = new HashSet<>();
+    public static int getMaxSubString(String s) {
+        int max = 0;
+        int leftSlide = 0;
 
-        for (int left = 0, right = 0; right < s.length(); right++) {
+        for (int rightSlide = 0; rightSlide < s.length(); rightSlide++) {
+            char currentChar = s.charAt(rightSlide);
 
-            boolean isExist = sNoneDuplicants.contains(s.charAt(right));
-            if (isExist) {
-                left++;
-                sNoneDuplicants.clear();
-            } else {
-                maxSub = sNoneDuplicants.size() + 1;
+            // Check if current character exists in the window
+            int index = s.substring(leftSlide, rightSlide).indexOf(currentChar);
+
+            if (index != -1) {
+                // Move leftSlide just after the repeated character
+                leftSlide = leftSlide + index + 1;
             }
-            sNoneDuplicants.add(s.charAt(right));
+
+            // Update the max length
+            max = Math.max(max, rightSlide - leftSlide + 1);
         }
 
-        return maxSub;
+        return max;
     }
 }
-
-
-//Input: s = "abcabcbb"
-//Output: 3
-//Explanation: The answer is "abc", with the length of 3.
-
