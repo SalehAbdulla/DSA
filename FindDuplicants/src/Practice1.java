@@ -7,17 +7,16 @@ public class Practice1 {
     public static void main(String[] args) {
         int[] arrayForTest = {1, 3, 4, 5};
         int[] arrayForTest2 = {1, 3, 4, 5, 3};
+
         System.out.println(solutionOne(arrayForTest));
         System.out.println(solutionOne(arrayForTest2));
 
         System.out.println("-".repeat(30));
 
-
         System.out.println(solutionTwo(arrayForTest));
         System.out.println(solutionTwo(arrayForTest2));
 
         System.out.println("-".repeat(30));
-
 
         System.out.println(solutionThree(arrayForTest));
         System.out.println(solutionThree(arrayForTest2));
@@ -64,8 +63,6 @@ public class Practice1 {
         return false;
 
     }
-
-
 
 
 }

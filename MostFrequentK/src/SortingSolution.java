@@ -7,6 +7,7 @@ public class SortingSolution {
         int k = 2;
         int[] solution = topKFrequentElements(nums, k);
         System.out.println(Arrays.toString(solution));
+
     }
 
     public static int[] topKFrequentElements(int[] nums, int k){

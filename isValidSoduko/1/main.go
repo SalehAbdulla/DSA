@@ -1,0 +1,37 @@
+package main
+
+func isValidSudoku(board [][]byte) bool {
+    for i := 0; i < len(board); i++ {
+        for j := 0; j < len(board); j++ {
+            if board[i][j] != '.' {
+                if !isValidPlacement(board, i, j, board[i][j]) {
+                    return false
+                }
+            }
+        }
+    }    
+    return true
+}
+
+func isValidPlacement(board [][]byte, row int, col int, num byte) bool {
+    for i := 0; i < 9; i++ {
+        if (i != row && board[row][i] == num) {
+            return false
+        } 
+        if (i != col && board[i][col] == num) {
+            return false
+        }
+    }
+
+    startRow := (row / 3) * 3
+    startCol := (col / 3) * 3
+
+    for i := 0; i < 3; i++ {
+        for j := 0; j < 3; j++ {
+            subRow := startRow + i
+            subCol := startCol + j
+            if (subRow != row || subCol != col) && board[subRow][subCol] == num {return false}
+        }
+    }
+    return true
+}
