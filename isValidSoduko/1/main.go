@@ -1,6 +1,6 @@
-package main
+package leetcode
 
-func isValidSudoku(board [][]byte) bool {
+func IsValidSudoku(board [][]byte) bool {
     for i := 0; i < len(board); i++ {
         for j := 0; j < len(board); j++ {
             if board[i][j] != '.' {

@@ -2,11 +2,11 @@ package main
 
 import (
 	"fmt"
-	leetcode "leetcode/isValidSoduko/1"
+	leetcode "leetcode/isValidSoduko/2"
 )
 
 func main() {
-	input := [][]byte{
+	board := [][]byte{
 		{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
 		{'6', '.', '.', '1', '9', '5', '.', '.', '.'},
 		{'.', '9', '8', '.', '.', '.', '.', '6', '.'},
@@ -18,6 +18,6 @@ func main() {
 		{'.', '.', '.', '.', '8', '.', '.', '7', '9'},
 	}
 
-	result := leetcode.IsValidSudoku(input)
+	result := leetcode.IsValidSudoku2(board)
 	fmt.Println("Is the Sudoku valid?", result)
 }
