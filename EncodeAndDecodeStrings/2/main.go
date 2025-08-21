@@ -36,5 +36,4 @@ func main(){
 	encode := solution.Encode(input)
 	decode := solution.Decode(encode)
 	fmt.Println(decode)
-
 }
