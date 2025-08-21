@@ -18,7 +18,7 @@ func (s *Solution) Decode(encoded string) (result []string) {
 	i := 0 // Pointer i
 	for i < len(encoded) {
 		j := i // Pointer j
-		for encoded[j] != '#' {j++} // I will move pointerJ to '#'
+		for encoded[j] != '#' {j++} // I will move pointer J to '#'
 		length, _ := strconv.Atoi(encoded[i:j]) // takes the number only
 		i = j + 1 // move i to be after # 
 		result = append(result, encoded[i:i+length])
