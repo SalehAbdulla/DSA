@@ -1,7 +1,8 @@
 package main
 
 func isValidSudoku(board [][]byte) bool {
-    // I'm gonna create three []hashMap slice with size 9 contains a {map[byte]bool, map[byte]bool, map[byte]bool, map[byte]bool, map[byte]bool,...}
+    // I'm gonna create three []hashMap slice with size 9 contains 
+	// a {map[byte]bool, map[byte]bool, map[byte]bool, map[byte]bool, map[byte]bool,...}
 
     rowMap := make([]map[byte]bool, 9)
     colMap := make([]map[byte]bool, 9)
