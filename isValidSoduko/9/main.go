@@ -1,15 +1,9 @@
-package main
-
 func isValidSudoku(board [][]byte) bool {
-    // I'm gonna create three []hashMap slice with size 9 contains 
-	// a {map[byte]bool, map[byte]bool, map[byte]bool, map[byte]bool, map[byte]bool,...}
-
-    
     rowMap := make([]map[byte]bool, 9)
     colMap := make([]map[byte]bool, 9)
     boxMap := make([]map[byte]bool, 9)
 
-    for i := 0; i < 9; i++  {
+    for i := 0; i < 9; i++ {
         rowMap[i] = make(map[byte]bool)
         colMap[i] = make(map[byte]bool)
         boxMap[i] = make(map[byte]bool)
@@ -23,7 +17,7 @@ func isValidSudoku(board [][]byte) bool {
         for c := 0; c < 9; c++ {
             val := board[r][c]
             if val == '.' {continue}
-        
+            
             if rowMap[r][val] {return false}
             if colMap[c][val] {return false}
             if boxMap[getBoxIndex(r, c)][val] {return false}
@@ -31,9 +25,7 @@ func isValidSudoku(board [][]byte) bool {
             rowMap[r][val] = true
             colMap[c][val] = true
             boxMap[getBoxIndex(r, c)][val] = true
-
         }
     }
     return true
 }
-
