@@ -1,3 +1,5 @@
+package main
+func main(){}
 func isValidSudoku(board [][]byte) bool {
     rowMap := make([]map[byte]bool, 9)
     colMap := make([]map[byte]bool, 9)
