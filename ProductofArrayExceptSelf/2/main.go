@@ -1,3 +1,9 @@
+package main
+
+
+func main(){}
+
+
 func productExceptSelf(nums []int) []int {
     left := make([]int, len(nums))
     left[0] = 1
