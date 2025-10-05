@@ -3,8 +3,8 @@ package main
 import "fmt"
 
 func main() {
-	s := "racecar"
-	t := "carrace"
+	s := "jar"
+	t := "jam"
 
 	solution := isAnagram(s, t)
 	fmt.Println(solution)
@@ -13,9 +13,12 @@ func main() {
 func isAnagram(s string, t string) bool {
 	sTape := getTape(s)
 	tTape := getTape(t)
-	for i := 0; i < len(s); i++ {
+	
+	for i := range sTape {
 		if sTape[i] != tTape[i] {return false}
 	}
+
+
 	return true
 }
 
