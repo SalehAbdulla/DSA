@@ -24,7 +24,6 @@ func (s *Solution) Encoded(strs []string) string {
 	return res
 }
 
-
 func (s *Solution) Deconded(encoded string) []string {
     var res []string
     i := 0
