@@ -23,3 +23,4 @@ public class PracticeHashTable {
         }
         return new ArrayList<>(hashMap.values());
     }
+}
